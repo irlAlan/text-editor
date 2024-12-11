@@ -1,4 +1,4 @@
 run: build
 
-build: ./tedit/
+build: ./oedit/
 	odin build oedit -out:bin/oedit -o:speed -debug

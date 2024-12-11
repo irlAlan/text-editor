@@ -28,7 +28,7 @@ readEmptyBuff :: proc() {
   buf: [256]byte;
   fmt.println("Enter the file data");
   n, err := os.read(os.stdin, buf[:]);
-  if err < 0 {
+  if err != nil {
     fmt.println("Error reading file name, ", err);
     return;
   }
