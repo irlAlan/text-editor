@@ -6,6 +6,7 @@ package tedit
 
 import "core:mem"
 import "core:fmt"
+import "../util"
 
 @(private="file")
 PieceTableType :: union {
@@ -16,12 +17,12 @@ PieceTableType :: union {
 @(private="file")
 OriginalType :: struct {
   // type: typeid,
-  line: string,
+  line: cstring,
 }
 @(private="file")
 AddType :: struct {
   // type: typeid,
-  text: [dynamic]string,
+  text: [dynamic]cstring,
 }
 
 PieceTableDecorator :: struct {
@@ -33,11 +34,12 @@ PieceTableDecorator :: struct {
 
 PieceTable :: struct {
   original: OriginalType,
+  pos: util.Vec2i,
   add: AddType,
   pieces: [dynamic]PieceTableDecorator,
 }
 
-PieceTableDefault :: PieceTable{OriginalType{"default"},AddType{nil}, nil};
+PieceTableDefault :: PieceTable{OriginalType{"default"},{0,0},AddType{nil}, nil};
 
 printPieceTable :: proc(pieceTable: ^[dynamic]PieceTable){
   for &pieceData in pieceTable{

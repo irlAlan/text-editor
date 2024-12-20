@@ -1,4 +1,5 @@
 run: build
+	./bin/sodit
 
-build: ./oedit/
-	odin build oedit -out:bin/oedit -o:speed -debug
+build: ./sodit/
+	odin build sodit -out:bin/sodit -o:speed -debug
