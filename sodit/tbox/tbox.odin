@@ -7,14 +7,39 @@ import "base:runtime"
 import sdl "vendor:sdl2"
 import ttf "vendor:sdl2/ttf"
 import util "../util"
+import pt "../piecetable"
+
+/*
+  Design choice: each textbox has a text
+  the textbox has:
+    - [X] total lines
+    - font
+    - [X] bacnkground col
+    - [X] text col
+    - [X] size
+    - [X] is wrapped
+    - [X] bounderies
+    - [X] textbox position 
+    - A dynamic array of type Text 
+
+  each Text type will have:
+    - PieceTable
+
+*/
+
 
 Tbox :: struct {
+  max_lines: i32,
   dim: util.Dim,
+  font: ^ttf.Font,
   pos: util.Vec2i,
   col: util.Col,
-  rect: sdl.Rect,
-  text: ^Text, // TODO: make this an array of text where each line is a text or fuse this with the piece table struct and make that an array
+  txtcol: util.Col,
+  txtsize: i32,
+  //text: [dynamic]Text, // TODO: make this an array of text where each line is a text or fuse this with the piece table struct and make that an array
+  ptext: [dynamic]pt.PieceTable,
   iswrapped: bool,
+  rect: sdl.Rect,
 }
 
 // TODO: sort out characters showing weirdly on screen
