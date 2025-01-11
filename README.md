@@ -15,3 +15,14 @@ call `make build` to build the executable into the bin/ folder
     - [ ] Add methods for the PieceTable data structure
     - [X] Handle ttf fonts
     - [ ] Add tests
+
+
+# Topics of note For presentation
+
+- how it relates to micrproccessors and firmware stuff i.e. low level
+- inspiration for the project: neovim, helix, old text editor project
+- overall performace of editor, i.e. overall size, speed, saving etc
+- current capabilities
+- future capabilities
+- make sure to show stats and stuff
+

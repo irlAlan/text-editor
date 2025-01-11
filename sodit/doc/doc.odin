@@ -33,6 +33,9 @@ loadfile :: proc(filename: string) -> [dynamic]ptable.PieceTable{
 }
 
 parse :: proc(pt: ^[dynamic]ptable.PieceTable, sdata: ^string){
+  // change the position so that its contains only the y of the text
+  // i.e. this will only contain the line number the text is on when it comes to drawing it
+  // the text box will contain the x component in the event there are multiple text boxes
   @(static) pos: util.Vec2i = {0,0}
   for{
     ptline := new(ptable.PieceTable)

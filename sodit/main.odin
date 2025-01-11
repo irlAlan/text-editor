@@ -63,7 +63,7 @@ main :: proc() {
 		}
     sdl.SetRenderDrawColor(renderer.renderer,0x00,0x00,0x00,0xff);
     sdl.RenderClear(renderer.renderer)
-    // tbox.draw(renderer.renderer,maintbox)
+    tbox.draw(renderer.renderer,maintbox)
     sdl.RenderPresent(renderer.renderer)
 	}
 }

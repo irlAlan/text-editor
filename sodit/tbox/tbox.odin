@@ -27,12 +27,15 @@ import pt "../piecetable"
 
 */
 
+/**
+  TODO: check file extension to see if can be tokenised or smthing
+*/
 
 Tbox :: struct {
   max_lines: i32,
   dim: util.Dim,
   font: ^ttf.Font,
-  pos: util.Vec2i,
+  pos: util.Vec2i, // TODO: change soon to only contain the x component
   col: util.Col,
   txtcol: util.Col,
   txtsize: i32,
